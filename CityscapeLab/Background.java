@@ -6,10 +6,7 @@ import java.awt.geom.RectangularShape;
 import java.awt.geom.Rectangle2D;
 import java.awt.Rectangle;
 import javax.swing.JComponent;
-/**
- * @Michael Chen
- */
-public class Window extends JComponent
+public class Background extends JComponent
 {
     private int x;
     private int y;
@@ -19,7 +16,7 @@ public class Window extends JComponent
     /**
      * Default constructor for objects of class Building
      */
-    public Window(int xpos, int ypos, int width, int height)
+    public Background(int xpos, int ypos, int width, int height)
     {
        this.x = xpos;
        this.y = ypos;
@@ -28,9 +25,9 @@ public class Window extends JComponent
     }
     public void draw(Graphics2D g2)
     {
-       Rectangle window = new Rectangle(this.x, this.y, this.w, this.h);
-       g2.setColor(Color.MAGENTA);
-       g2.draw(window);
-       g2.fill(window);
+       Rectangle background = new Rectangle(this.x, this.y, this.w, this.h);
+       g2.setColor(Color.CYAN);
+       g2.draw(background);
+       g2.fill(background);
     }
 }

@@ -1,40 +1,40 @@
-
+import java.awt.geom.Ellipse2D;
+import java.awt.geom.Ellipse2D.Double;
+import java.awt.Color;
+import java.awt.Graphics2D;
+import java.awt.Graphics;
+import java.lang.Object;
+import javax.swing.JComponent;
 
 /**
- * Write a description of class Sun here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Michael Chen (your name) 
  */
-public class Sun
+public class Sun extends JComponent
 {
     /** description of instance variable x (add comment for each instance variable) */
     private int x;
+    private int y;
+    private int w;
+    private int h;
 
     /**
      * Default constructor for objects of class Sun
      */
-    public Sun()
+    public Sun(int xpos, int ypos, int width, int height)
     {
-        // initialise instance variables
-        x = 0;
+       this.x = xpos;
+       this.y = ypos;
+       this.w = width;
+       this.h = height;
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *    that describes the operation of the method
-     *
-     * @pre        preconditions for the method
-     *            (what the method assumes about the method's parameters and class's state)
-     * @post    postconditions for the method
-     *            (what the method guarantees upon completion)
-     * @param    y    description of parameter y
-     * @return    description of the return value
-     */
-    public int sampleMethod(int y)
+    public void draw(Graphics2D g2)
     {
-        // put your code here
-        return x+y;
+       Ellipse2D.Double sun = new Ellipse2D.Double(this.x, this.y, this.w, this.h);
+       g2.setColor(Color.YELLOW);
+       g2.draw(sun);
+       g2.fill(sun);
+    }
     }
 
-}
